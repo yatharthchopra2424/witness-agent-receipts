@@ -1,0 +1,12 @@
+failure_id,failure_type,description,visible_on_screen,agent_claims_success,why_hard_to_catch_from_logs
+F01,wrong_digit,Two digits transposed in the amount (48250 saved as 48520),yes,yes,Log shows "typed amount" with no error
+F02,silent_error_toast,Save fails; a red toast appears for about 2 seconds and the row is not stored,yes (briefly),yes,No exception raised; the click succeeded
+F03,duplicate_row,Same invoice saved twice,yes,yes,Both saves return OK
+F04,blank_field,A required field left empty but save still accepted,yes,yes,Typing step skipped silently
+F05,wrong_row_edited,Agent edits invoice 1044 instead of 1043,yes,yes,Log names the intended id not the actual row
+F06,stale_value,Old value remains after an update,yes,yes,Field typed but not committed
+F07,gst_miscalc,GST amount does not match rate × amount,yes,yes,Agent copied a computed value without checking
+F08,date_format_swap,Day and month swapped (03/04 vs 04/03),yes,yes,Format hidden in a UI mask
+F09,partial_save,Row saved without payment status,yes,yes,Save returned OK
+F10,modal_blocked,A modal covers the grid and the save never happens,yes,yes,Click went to the modal not the button
+F11,clean,No failure injected (control),n/a,yes,n/a
